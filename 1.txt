@@ -1,25 +1,29 @@
 Git 常用命令
 
 git init
-	1、在一个目录下使用此命令，则是在这个目录下创建一个git仓库
-	2、此命令可以带参数，git init <文件夹名>，如在/Users/yangyifeng目录下使用git init gitDemo，则是在这个目录下创建一个新的文件夹叫gitDemo，成为一个git 仓库
+	1.在一个目录下使用此命令，则是在这个目录下创建一个git仓库
+	2.此命令可以带参数，git init <文件夹名>，如在/Users/yangyifeng目录下使用git init gitDemo，则是在这个目录下创建一个新的文件夹叫gitDemo，成为一个git 仓库
 
 git add （touch <file.name> 创建一个文件的命令）
-	1、这个文件将开始被git追踪，它的修改，删除等都会被git知道，文件同时加入到git的缓冲区，但是还没有提交，也就是还没有git commit，之后被追踪的文件在提交之前，都要add，将被追踪的文件的修改内容加入到缓冲区中
+	1.这个文件将开始被git追踪，它的修改，删除等都会被git知道，文件同时加入到git的缓冲区，但是还没有提交，也就是还没有git commit，之后被追踪的文件在提交之前，都要add，将被追踪的文件的修改内容加入到缓冲区中
 
 git commit  （将已经被git add的文件，也就是缓冲区的文件正式加入到git仓库中，同时会有一个版本号）
-	1、不加任何参数，则是吧已经git add过的缓冲去的文件加入到git仓库中（需要写message来描述此次commit才能正常通过）。
-	2、git commit -m "<message>"，通过-m参数可以方便的在命令的后面加入message，而不是像上面那样进入一个文件当中写message
-	3、git commit -am "<message>" add和message的组合，如果对已经被追踪的文件修改，不用先add，在commit -m了，将两步操作通过-am合起来
+	1.不加任何参数，则是吧已经git add过的缓冲去的文件加入到git仓库中（需要写message来描述此次commit才能正常通过）。
+	2.git commit -m "<message>"，通过-m参数可以方便的在命令的后面加入message，而不是像上面那样进入一个文件当中写message
+	3.git commit -am "<message>" add和message的组合，如果对已经被追踪的文件修改，不用先add，在commit -m了，将两步操作通过-am合起来
 
 git log 查看提交日志，--graph 出现版本线图
 git diff 
-	1、不加参数，是查看所有 被追踪文件 和 上一次commit的差别，这在ide中可以很智能，方便的看到，不用命令
-	2、--staged，则是查看缓冲区的文件 和 和上一次commit的差别
+	1.不加参数，是查看所有 被追踪文件 和 上一次commit的差别，这在ide中可以很智能，方便的看到，不用命令
+	2.--staged，则是查看缓冲区的文件 和 和上一次commit的差别
 
 创建一个.gitignore  git仓库可以忽略该文件中制定的文件夹或者文件
 
 **在开发中，不是每个代码员工开辟一个分支，而是公司整体把控项目有多少分支，当leader觉得需要为当前项目开一个新功能时，则开一个分支，当新功能开发好后，leader将这个分支merge到主分支上；在开发中，可以一直处于新任务分支上，每个coder写好代码后，可以提交给leader，leader考虑是否commit到该分支上，所以就算有100个coder在写自己的代码，新任务分支可以只有一个，最后功能上线，merge到主分支，至始至终就只有两个分支。
+
+git merge
+    1.比如，在分支master时，执行git merge develop，则将会吧develop的所有内容覆盖到master，相当于master此时时develop的一个备份而已！
+    2.在合并时，可能会出先冲突；比如，有两个分支，对同一个地方做了修改，当它们都想要merge到master时，就会产生冲突；
 
 
 
