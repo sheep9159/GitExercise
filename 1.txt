@@ -29,6 +29,8 @@ git merge
     2.在合并时，可能会出先冲突；比如，有两个分支，对同一个地方做了修改，当它们都想要merge到master时，就会产生冲突；# <这里是management对master的修改>
 >>>>>>> management
 
+# 这就是merge时有冲突，会在master上的表现，有两种解决方式：1、修改冲突的地方，>可以让冲突的地方知识develop的内容，或者知识management的内容；2、不修改或者改>成另外不同于前两者merge进来的内容。第二种方法master分支会前进，而develop和mannagement分支则只会在原来的地方。
+
 
 
 
