@@ -1,0 +1,11 @@
+Git 常用命令
+
+git init
+	1、在一个目录下使用此命令，则是在这个目录下创建一个git仓库
+	2、此命令可以带参数，git init <文件夹名>，如在/Users/yangyifeng目录下使用git init gitDemo，则是在这个目录下创建一个新的文件夹叫gitDemo，成为一个git 仓库
+
+git add （touch <file.name> 创建一个文件的命令）
+	1、这是将文件加入到git的缓冲区，但是还没有提交，也就是还没有git commit
+
+Git commit  （将已经被git add的文件，也就是缓冲区的文件正式加入到git仓库中，同时会有一个版本号）
+	1、
