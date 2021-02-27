@@ -23,7 +23,7 @@ git diff
 
 git merge
     1.比如，在分支master时，执行git merge develop，则将会吧develop的所有内容覆盖到master，相当于master此时时develop的一个备份而已！
-    2.在合并时，可能会出先冲突；比如，有两个分支，对同一个地方做了修改，当它们都想要merge到master时，就会产生冲突；
+    2.在合并时，可能会出先冲突；比如，有两个分支，对同一个地方做了修改，当它们都想要merge到master时，就会产生冲突；# <这里是management对master的修改>
 
 
 
