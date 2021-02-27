@@ -8,4 +8,6 @@ git add （touch <file.name> 创建一个文件的命令）
 	1、这是将文件加入到git的缓冲区，但是还没有提交，也就是还没有git commit
 
 Git commit  （将已经被git add的文件，也就是缓冲区的文件正式加入到git仓库中，同时会有一个版本号）
-	1、
+	1、不加任何参数，则是吧已经git add过的缓冲去的文件加入到git仓库中（需要写message来描述此次commit才能正常通过）。
+	2、git commit -m '<message>'，通过-m参数可以方便的在命令的后面加入message，而不是像上面那样进入一个文件当中写message
+	3、
