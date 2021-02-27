@@ -35,4 +35,6 @@ git merge
 
 git merge命令合并时可以后跟 --no-commit 表明现在我们要merge但是只是提交到缓冲区，不commit，待我们测试完成，认为功能正常后，才正式的commit到master中。
 
+# 这里是在远端修改的内容
+
 
