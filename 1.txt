@@ -52,3 +52,5 @@ git pull实际上时git fetch 和git merge的结合，首先执行git fetch从�
 
 
 # 查看meger之后还需要commit吗
+
+# 第二个开发者做了一些修改
