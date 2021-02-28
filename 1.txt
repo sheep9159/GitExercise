@@ -1,21 +1,21 @@
 Git 常用命令
 
 git init
-	1.在一个目录下使用此命令，则是在这个目录下创建一个git仓库
-	2.此命令可以带参数，git init <文件夹名>，如在/Users/yangyifeng目录下使用git init gitDemo，则是在这个目录下创建一个新的文件夹叫gitDemo，成为一个git 仓库
+ 1.在一个目录下使用此命令，则是在这个目录下创建一个git仓库
+ 2.此命令可以带参数，git init <文件夹名>，如在/Users/yangyifeng目录下使用git init gitDemo，则是在这个目录下创建一个新的文件夹叫gitDemo，成为一个git 仓库
 
 git add （touch <file.name> 创建一个文件的命令）
-	1.这个文件将开始被git追踪，它的修改，删除等都会被git知道，文件同时加入到git的缓冲区，但是还没有提交，也就是还没有git commit，之后被追踪的文件在提交之前，都要add，将被追踪的文件的修改内容加入到缓冲区中
+ 1.这个文件将开始被git追踪，它的修改，删除等都会被git知道，文件同时加入到git的缓冲区，但是还没有提交，也就是还没有git commit，之后被追踪的文件在提交之前，都要add，将被追踪的文件的修改内容加入到缓冲区中
 
 git commit  （将已经被git add的文件，也就是缓冲区的文件正式加入到git仓库中，同时会有一个版本号）
-	1.不加任何参数，则是吧已经git add过的缓冲去的文件加入到git仓库中（需要写message来描述此次commit才能正常通过）。
-	2.git commit -m "<message>"，通过-m参数可以方便的在命令的后面加入message，而不是像上面那样进入一个文件当中写message
-	3.git commit -am "<message>" add和message的组合，如果对已经被追踪的文件修改，不用先add，在commit -m了，将两步操作通过-am合起来
+ 1.不加任何参数，则是吧已经git add过的缓冲去的文件加入到git仓库中（需要写message来描述此次commit才能正常通过）。
+ 2.git commit -m "<message>"，通过-m参数可以方便的在命令的后面加入message，而不是像上面那样进入一个文件当中写message
+ 3.git commit -am "<message>" add和message的组合，如果对已经被追踪的文件修改，不用先add，在commit -m了，将两步操作通过-am合起来
 
 git log 查看提交日志，--graph 出现版本线图
-git diff 
-	1.不加参数，是查看所有 被追踪文件 和 上一次commit的差别，这在ide中可以很智能，方便的看到，不用命令
-	2.--staged，则是查看缓冲区的文件 和 和上一次commit的差别
+git diff
+ 1.不加参数，是查看所有 被追踪文件 和 上一次commit的差别，这在ide中可以很智能，方便的看到，不用命令
+ 2.--staged，则是查看缓冲区的文件 和 和上一次commit的差别
 
 创建一个.gitignore  git仓库可以忽略该文件中制定的文件夹或者文件
 
@@ -35,6 +35,20 @@ git merge
 
 git merge命令合并时可以后跟 --no-commit 表明现在我们要merge但是只是提交到缓冲区，不commit，待我们测试完成，认为功能正常后，才正式的commit到master中。
 
+<<<<<<< HEAD
+# 这里是本地修改的内容，试验，远端的master修改的同时，本地的master也修改，那么在git push和git pull时会有什么效果。
+=======
 # 这里是在远端修改的内容
 
+>>>>>>> b1e9f0da1c664ad6ba0494cc2214e26b58af5038
 
+# 在develop中位置1修改， 这是在develop中修改与master不同的位置，第三次不冲突的修改
+
+git pull实际上时git fetch 和git merge的结合，首先执行git fetch从远端把代码拉下来，但是对于本地来说，并没有merge到我们自己的分支；也就是，当我们与远端连接后，我们本地相当于有了一个origin/master，每次本地git pull时，首先会更新本地的origin/master，再和本地的master merge。，当本地有一个远端没有的分支想要git pull时，会出错。所以多人协同的时候，确定自己在哪个分支上工作，当自己写好的代码想要push时，首先先pull代码，将远端相同分支的代码与自己的代码进行合并解决冲突后【冲突是指在文件的同一位置出现了不同，不同位置的修改是不会产生冲突的】，再push。
+
+# 在master的位置2修改，看看其他分支merge时的冲突怎么写的，第二次修改，第三次补冲突的修改
+
+哪些被认定为冲突，git已经很好解决了，基本和认知符合，所以不用自己去想
+
+
+# 查看meger之后还需要commit吗
