@@ -54,3 +54,5 @@ git pull实际上时git fetch 和git merge的结合，首先执行git fetch从�
 # 查看meger之后还需要commit吗
 
 # 第二个开发者做了一些修改
+
+# 创建了一个本地分支，查看在合并到master后，推到远端，远端会不会出现这个本地分支
